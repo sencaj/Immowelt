@@ -1,0 +1,158 @@
+﻿/* ----------------------------------------------------------------------------*/
+/* -- RADIO-BUTTON  -----------------------------------------------------------*/
+/* ----------------------------------------------------------------------------*/
+
+@import '../abstracts/_variables.scss';
+
+input[type="radio"] {
+    visibility: hidden;
+    height: 0; /* kein display:none damit clientseitige Validierung funktioniert (unobstrusive) */
+    width: 0;
+    margin-left: -4px;
+
+    + label {
+        display: table;
+        cursor: pointer;
+        margin-left: 30px;
+        position: relative;
+        padding-top: 3px;
+        padding-bottom: 3px;
+
+        @media screen and (max-width: $viewport_s_max_width) {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            margin: 0px 20px 20px 0 !important;
+        }
+
+        &::before {
+            border: 1px solid #aaa;
+            border-radius: 50%;
+            display: inline-block;
+            vertical-align: top;
+            position: absolute;
+            content: '';
+            top: 5px;
+            left: -25px;
+            height: 18px;
+            width: 18px;
+
+            @media screen and (max-width: $viewport_s_max_width) {
+                top: 8px;
+            }
+        }
+
+        &::after {
+            background-color: #fff;
+            display: block;
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            height: 8px;
+            width: 8px;
+            left: -20px;
+            top: 10px;
+            animation-duration: 0.2s;
+            -moz-animation-duration: 0.2s;
+            -webkit-animation-duration: 0.2s;
+            animation-name: scaleout, bgcolor;
+            -moz-animation-name: scaleout, bgcolor;
+            -webkit-animation-name: scaleout, bgcolor;
+        }
+
+        &:hover::before {
+            border: 1px solid #666;
+        }
+
+        + span.field-validation-error {
+            margin: 0 0 0 5px;
+        }
+    }
+
+    &:checked {
+        + label::before {
+            border: 1px solid #666;
+        }
+
+        + label::after {
+            background: #666 none repeat scroll 0 0;
+            display: block;
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            height: 8px;
+            width: 8px;
+            left: -20px;
+            top: 10px;
+            animation-duration: 0.2s;
+            -moz-animation-duration: 0.2s;
+            -webkit-animation-duration: 0.2s;
+            animation-name: scalein;
+            -moz-animation-name: scalein;
+            -webkit-animation-name: scalein;
+
+            @media screen and (max-width: $viewport_s_max_width) {
+                top: 13px;
+            }
+        }
+    }
+}
+
+
+
+/* - ANIMATION ----------------------------------------------------------------*/
+
+@keyframes scalein {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+@-moz-keyframes scalein {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+@-webkit-keyframes scalein {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+@-moz-keyframes scaleout {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(0);
+    }
+}
+@-webkit-keyframes scaleout {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(0);
+    }
+}
+@keyframes scaleout {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(0);
+    }
+}

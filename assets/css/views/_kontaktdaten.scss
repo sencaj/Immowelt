@@ -1,0 +1,103 @@
+﻿@import '../abstracts/_variables.scss';
+
+/* -- KONTAKTDATEN */
+
+.kontaktbox {
+    border: 1px solid $ci-color;
+    padding: 15px;
+    -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.08), 0 3px 6px rgba(0,0,0,0.11);
+    -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.08), 0 3px 6px rgba(0,0,0,0.11);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.08), 0 3px 6px rgba(0,0,0,0.11);
+    border-radius: 3px;
+
+    span {
+        font-weight: bold;
+        display: block;
+    }
+
+    small {
+        display: block;
+    }
+
+    &.alone {
+        + label::after {
+            display: none !important;
+        }
+
+        + label::before {
+            display: none !important;
+        }
+    }
+}
+
+.infobox {
+    border: 1px solid $ci-color;
+    padding: 15px;
+    -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.08), 0 3px 6px rgba(0,0,0,0.11);
+    -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.08), 0 3px 6px rgba(0,0,0,0.11);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.08), 0 3px 6px rgba(0,0,0,0.11);
+    border-radius: 3px;
+
+    span {
+        font-weight: bold;
+        display: block;
+    }
+
+    small {
+        display: block;
+    }
+}
+
+/* -- RADIOBUTTON KONTAKTDATEN */
+input[type="radio"].kontaktbox {
+    position: absolute;
+
+    & + label {
+        display: table;
+        cursor: pointer;
+        margin-left: 0px;
+        position: relative;
+        padding: 15px 15px 15px 45px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        width: 100%;
+        animation-duration: 0.5s;
+        -moz-animation-duration: 0.5s;
+        -webkit-animation-duration: 0.5s;
+        animation-name: boxshadowin;
+        -moz-animation-name: boxshadowin;
+        -webkit-animation-name: boxshadowin;
+        -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.12);
+        -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.12);
+        box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.12);
+
+        &::before {
+            top: 20px !important;
+            left: 14px !important;
+        }
+
+        &::after {
+            top: 25px !important;
+            left: 19px !important;
+        }
+    }
+
+    &:checked + label {
+        border: 1px solid $ci-color;
+        -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.08), 0 3px 6px rgba(0,0,0,0.11);
+        -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.08), 0 3px 6px rgba(0,0,0,0.11);
+        box-shadow: 0 3px 6px rgba(0,0,0,0.08), 0 3px 6px rgba(0,0,0,0.11);
+        animation-duration: 0.5s;
+        -moz-animation-duration: 0.5s;
+        -webkit-animation-duration: 0.5s;
+        animation-name: boxshadowout;
+        -moz-animation-name: boxshadowout;
+        -webkit-animation-name: boxshadowout;
+    }
+
+    &.alone + label {
+        padding: 15px;
+    }
+}
+
+

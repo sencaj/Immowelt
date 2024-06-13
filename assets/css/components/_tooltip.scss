@@ -1,0 +1,483 @@
+﻿/*----------------------------------------------------------------------------*\
+    - TOOLTIP
+\*----------------------------------------------------------------------------*/
+
+
+@import '../abstracts/_variables.scss';
+
+
+html {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Autocomplete über Tooltip */
+input[type="checkbox"] + label[for="LocationDisplay"] {
+    z-index: 5;
+}
+
+/* wird bei checkboxen gesetzt */
+.tooltip_wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+/* Textarea */
+.tooltip_wrapper_textarea {
+    position: relative;
+    width:100%;
+}
+
+.iw_tooltip {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.basisdaten .iw_tooltip {
+    position: absolute;
+    top: 61px;
+    left: 142px;
+}
+
+.basisdaten .iw_tooltip button.icon-info-circled {
+    left: 0px;
+}
+
+.tooltip_wrapper_textarea .iw_tooltip {
+    position: absolute;
+    top:0;
+    bottom: inherit;
+    right: 0;
+}
+
+.strasse_verbergen label{
+    padding-right:24px;
+}
+
+.strasse_verbergen .iw_tooltip {
+    position: absolute;
+    top: 30px;
+    right: 19px;
+}
+
+/* -- InfoButton -------------------------------------------------------*/
+/* --- Position Textfeld */
+.iw_tooltip button.icon-info-circled {
+    position: absolute;
+    right: -31px;
+    top: -27px;
+    padding: 7px;
+    margin-top: -9px;
+    font-size: 20px;
+}
+
+
+.hausgeld .iw_tooltip button.icon-info-circled {
+    position: absolute;
+    left: 0px;
+    top: -27px;
+}
+
+/* --- Position Checkbox */
+input.checkbox[type="checkbox"] ~ label .iw_tooltip button.icon-info-circled {
+    top: -24px;
+}
+
+/* --- Position Textarea*/
+.tooltip_wrapper_textarea .iw_tooltip button.icon-info-circled {
+    top: 0px;
+    right: -11px;
+}
+
+
+
+
+/*-- Position Content -------------------------------------------------*/
+
+.iw_tooltip .tooltip_content {
+    position: absolute;
+    z-index: 10;
+    width: 400px;
+    background-color: #fff;
+    padding: 25px;
+    top: -54px;
+    left: 18px;
+    border-radius: 3px;
+    box-shadow: 0px 4px 6px 0px rgba(0,0,0,.15);
+    -webkit-box-shadow: 0px 4px 6px 0px rgba(0,0,0,.15);
+    -moz-box-shadow: 0px 4px 6px 0px rgba(0,0,0,.15);
+    border: 1px solid #ddd;
+    border-left: 3px solid $ci-color;
+}
+
+/* Sonderfall nur für Erfassung */
+.kosten .iw_tooltip {
+    position: absolute;
+    left: 173px;
+    top: 60px;
+    bottom: inherit;
+    right: inherit;
+}
+
+.hausgeld .iw_tooltip {
+    position: absolute;
+    top: 61px;
+    left: 143px;
+}
+
+
+.tooltip_wrapper_textarea .iw_tooltip .tooltip_content {
+    top: 25px;
+    left: 10px;
+}
+
+.tooltip_wrapper_textarea.wohnungsarten .iw_tooltip .tooltip_content {
+    top: 5px;
+    left:15px;
+}
+
+input.checkbox[type="checkbox"] ~ label .iw_tooltip .tooltip_content {
+    top: -51px;
+}
+
+.iw_tooltip .tooltip_content::before {
+    position: absolute;
+    font-family: "fontello";
+    content: " ";
+    height: 0;
+    width: 0;
+    left: -27px;
+    border: solid transparent;
+    border-color: transparent $ci-color transparent transparent;
+    border-width: 12px;
+}
+
+.iw_tooltip button.icon-close {
+    position: absolute;
+    right: 6px;
+    top: 6px;
+    height: 25px;
+    width: 25px;
+    color: silver;
+    color: #999;
+    font-size: 14px;
+}
+
+.iw_tooltip .tooltip_content h1 {
+    line-height: 1;
+    margin: 0px 0 12px 0px;
+    font-size: 25px;
+}
+
+.iw_tooltip .tooltip_content p {
+    padding: 0;
+    color: #777;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+
+/* Meidenupload Title*/
+.medienupload_title {
+    padding-right:30px;
+}
+
+.medienupload_title .iw_tooltip {
+    position: absolute;
+    top: 28px;
+    right: 20px;
+}
+
+.medienupload_title  .iw_tooltip .tooltip_content {
+    top: -52px;
+    left: 17px;
+}
+
+.kaution .iw_tooltip button.icon-info-circled {
+    right: -35px;
+}
+
+.ausstattung .iw_tooltip button.icon-info-circled {
+    right: -36px;
+}
+
+.objektbeschreibung.tooltip_wrapper_textarea .iw_tooltip {
+    left:0;
+}
+
+.objektbeschreibung.tooltip_wrapper_textarea .iw_tooltip button.icon-info-circled {
+    left:50px;
+}
+
+/* -- ANIMATION TOOLTIPP ------------------------------------ */
+    .slide_tooltip-enter-active {
+    animation: slide_tooltip_enter 0.5s ease-in-out;
+    -webkit-animation: slide_tooltip_enter 0.5s ease-in-out;
+    opacity: 1;
+}
+
+@keyframes          slide_tooltip_enter { 0% { transform: translateX(10%); opacity: 0; } 20% { transform: translateX(10%); opacity: 0; } 45% {opacity: 0;} 100% { transform: translateX(0); opacity: 1; }}
+@-webkit-keyframes  slide_tooltip_enter { 0% { transform: translateX(10%); opacity: 0; } 20% { transform: translateX(10%); opacity: 0; } 45% {opacity: 0;} 100% { transform: translateX(0); opacity: 1; }}
+@-o-keyframes       slide_tooltip_enter { 0% { transform: translateX(10%); opacity: 0; } 20% { transform: translateX(10%); opacity: 0; } 45% {opacity: 0;} 100% { transform: translateX(0); opacity: 1; }}
+@-moz-keyframes     slide_tooltip_enter { 0% { transform: translateX(10%); opacity: 0; } 20% { transform: translateX(10%); opacity: 0; } 45% {opacity: 0;} 100% { transform: translateX(0); opacity: 1; }}
+
+.slide_tooltip-leave-active {
+    animation: slideUp 0.3s ease-in-out;
+    -webkit-animation: slide_tooltip_leave 0.3s ease-in-out;
+    opacity: 0;
+}
+
+@keyframes          slide_tooltip_leave { 0%  { opacity: 1; } 100% {opacity: 0; }}
+@-webkit-keyframes  slide_tooltip_leave { 0%  { opacity: 1; } 100% {opacity: 0; }}
+@-o-keyframes       slide_tooltip_leave { 0%  { opacity: 1; } 100% {opacity: 0; }}
+@-moz-keyframes     slide_tooltip_leave { 0%  { opacity: 1; } 100% {opacity: 0; }}
+
+
+
+/*----------------------------------------------------------------------------*\
+    - MEDIA-QUERY
+\*----------------------------------------------------------------------------*/
+
+/*  -- MEDIA-QUERY < 640 < 980 ------------------------------------------------*/
+@media screen and (min-width: 641px) and (max-width: 980px) {
+    .strasse_verbergen .tooltip_content,
+    .medienupload_title .tooltip_content,
+    .tooltip_wrapper_textarea .tooltip_content,
+    .nebenkosten .tooltip_content,
+    .kaltmiete .tooltip_content,
+    .kaution .tooltip_content{
+        max-width: 295px;
+    }
+}
+
+
+
+/*  -- MEDIA-QUERY < 640 -----------------------------------------------------*/
+@media screen and (max-width: 640px) {
+    .tooltip_wrapper {
+        position: relative;
+        display: inherit;
+    }
+
+    .iw_tooltip {
+        bottom: -20px;
+    }
+
+    .tooltip_wrapper_textarea .iw_tooltip {
+        position: static;
+    }
+
+    .strasse_verbergen .iw_tooltip {
+        position: static;
+        top: 0px;
+        right: 0px;
+    }
+
+    .tooltip_wrapper_textarea .iw_tooltip .tooltip_content {
+        top: 15px;
+        left: 0px;
+        width: 100%;
+    }
+
+    .tooltip_wrapper_textarea.wohnungsarten .iw_tooltip .tooltip_content {
+        top: 20px;
+        left: 0px;
+    }
+
+    .basisdaten .iw_tooltip {
+        position: static;
+        top: 0;
+        left: 0;
+    }
+
+    .basisdaten .iw_tooltip .tooltip_content {
+        width: 100%;
+        top: 23px;
+    }
+
+    .basisdaten .iw_tooltip button.icon-info-circled {
+        position: absolute;
+        left: 140px;
+        top: 33px;
+    }
+
+    /* wenn checkbox */
+    input.checkbox[type="checkbox"] ~ label .iw_tooltip {
+        right: 30px;
+    }
+
+    .iw_tooltip, .iw_tooltip .tooltip_content {
+        position: relative;
+    }
+
+    .iw_tooltip .tooltip_content {
+        position: relative;
+        width: calc(100vw - 40px);
+        top: 0px;
+        left: 0px;
+        border-top: 3px solid $ci-color;
+        border-left: none;
+        margin-bottom: 20px;
+        display: inline-block;
+    }
+
+    input.checkbox[type="checkbox"] ~ label .iw_tooltip .tooltip_content {
+        top: 0px;
+    }
+
+    .strasse_verbergen input.checkbox[type="checkbox"] ~ label .iw_tooltip .tooltip_content {
+        top: 23px;
+        width: calc(100% + 50px);
+        margin-left: -30px;
+        position: relative;
+    }
+
+    .iw_tooltip .tooltip_content::before {
+        left: 60px;
+        top: -27px;
+        border-color: transparent transparent $ci-color transparent;
+    }
+
+    .iw_tooltip button.icon-info-circled {
+        top: -49px;
+    }
+
+
+    .kosten .iw_tooltip button.icon-info-circled {
+        top: 33px;
+        left: 170px;
+    }
+
+    .hausgeld .iw_tooltip button.icon-info-circled {
+        position: absolute;
+        left: 155px;
+        top: 33px;
+    }
+
+    .basisdaten .iw_tooltip button.icon-info-circled, .kaltmiete .iw_tooltip button.icon-info-circled, .nebenkosten .iw_tooltip button.icon-info-circled {
+        text-align: left;
+    }
+
+ 
+    /* Sonderfall nur für Erfassung */
+    .kosten .kaltmiete .iw_tooltip {
+        position: initial;
+        left: 0px;
+        top: 0px;
+        bottom: inherit;
+        right: inherit;
+    }
+
+    .kosten .nebenkosten .iw_tooltip {
+        position: initial;
+        left: 0px;
+        top: 0px;
+        bottom: inherit;
+        right: inherit;
+    }
+
+    .hausgeld .iw_tooltip {
+        position: initial;
+        left: 0px;
+        top: 0px;
+        bottom: inherit;
+        right: inherit;
+    }
+
+    .kosten .iw_tooltip .tooltip_content,
+    .hausgeld .iw_tooltip .tooltip_content {
+        width: 100%;
+        top: 25px;
+    }
+
+  
+    input.checkbox[type="checkbox"] ~ label .iw_tooltip button.icon-info-circled {
+        top: -40px;
+        right: -61px;
+    }
+
+    .strasse_verbergen input.checkbox[type="checkbox"] ~ label .iw_tooltip button.icon-info-circled {
+        top: 8px;
+        right: -13px;
+    }
+
+    .tooltip_wrapper input[type="checkbox"] + label {
+        padding-right: 30px;
+    }
+
+    /* medienupload */
+    .medienupload_title .iw_tooltip {
+        position: static;
+    }
+
+    .medienupload_title .iw_tooltip button.icon-info-circled {
+        top: 2px;
+        right: -10px;
+    }
+
+    .medienupload_title .iw_tooltip .tooltip_content {
+        top: 18px;
+        left: 0px;
+        width: calc(100% + 30px);
+    }
+
+    .ausstattung input.checkbox[type="checkbox"] ~ label .iw_tooltip button.icon-info-circled {
+        right: -71px;
+    }
+
+     /* -- TOOLTIPP ------------------------------------ */
+
+    .slide_tooltip-enter-active{
+        animation: slide_tooltip_enter 0.5s ease-out;
+        -webkit-animation: slide_tooltip_enter 0.5s ease-out;
+        opacity: 1;
+    }
+
+    @keyframes slide_tooltip_enter { 0% {  opacity: 0;} 20% {  opacity: 0;} 45% { opacity: 1; } 100% { opacity: 1; }}
+    @-webkit-keyframes slide_tooltip_enter { 0% {  opacity: 0;} 20% {  opacity: 0;} 45% { opacity: 1; } 100% { opacity: 1; }}
+    @-o-keyframes slide_tooltip_enter { 0% {  opacity: 0;} 20% {  opacity: 0;} 45% { opacity: 1; } 100% { opacity: 1; }}
+    @-moz-keyframes slide_tooltip_enter { 0% {  opacity: 0;} 20% {  opacity: 0;} 45% { opacity: 1; } 100% { opacity: 1; }}
+
+
+    .slide_tooltip-enter-active .tooltip_content {
+        animation: slide_tooltip_enter_content 0.5s ease-out;
+        -webkit-animation: slide_tooltip_enter_content 0.5s ease-out;
+    }
+
+    @keyframes slide_tooltip_enter_content { 0% { transform: translateY(-10%); padding-top: 0px; padding-bottom: 0px; } 20% { transform: translateY(-10%); } 45% { transform: translateY(-10%); } 100% { transform: translateY(0); padding-top: 25px; padding-bottom: 25px; }}
+    @-webkit-keyframes slide_tooltip_enter_content { 0% { transform: translateY(-10%); padding-top: 0px; padding-bottom: 0px; } 20% { transform: translateY(-10%); } 45% { transform: translateY(-10%); } 100% { transform: translateY(0); padding-top: 25px; padding-bottom: 25px; }}
+    @-o-keyframes slide_tooltip_enter_content { 0% { transform: translateY(-10%); padding-top: 0px; padding-bottom: 0px; } 20% { transform: translateY(-10%); } 45% { transform: translateY(-10%); } 100% { transform: translateY(0); padding-top: 25px; padding-bottom: 25px; }}
+    @-moz-keyframes slide_tooltip_enter_content { 0% { transform: translateY(-10%); padding-top: 0px; padding-bottom: 0px; } 20% { transform: translateY(-10%); } 45% { transform: translateY(-10%); } 100% { transform: translateY(0); padding-top: 25px; padding-bottom: 25px; }}
+
+    .slide_tooltip-enter-active p {
+        animation: tooltip_content_p_enter 0.5s ease-out;
+        -webkit-animation: tooltip_content_p_enter 0.5s ease-out;
+    }
+
+    @keyframes          tooltip_content_p_enter { 0% { line-height: 0em; opacity: 0;} 40% { opacity: 0;} 100% { line-height: 1.8em; opacity: 1;} }
+    @-webkit-keyframes  tooltip_content_p_enter { 0% { line-height: 0em; opacity: 0;} 40% { opacity: 0;} 100% { line-height: 1.8em; opacity: 1;} }
+    @-o-keyframes       tooltip_content_p_enter { 0% { line-height: 0em; opacity: 0;} 40% { opacity: 0;} 100% { line-height: 1.8em; opacity: 1;} }
+    @-moz-keyframes     tooltip_content_p_enter { 0% { line-height: 0em; opacity: 0;} 40% { opacity: 0;} 100% { line-height: 1.8em; opacity: 1;} }
+
+
+    .slide_tooltip-leave-active {
+        animation: slideUp 0.3s ease-in-out;
+        -webkit-animation: slide_tooltip_leave 0.3s ease-in-out;
+        opacity: 0;
+    }
+
+    @keyframes          slide_tooltip_leave { from { opacity: 1; padding-top: 25px; padding-bottom: 25px;} to { opacity: 0; padding-top: 0px; padding-bottom: 0px;}}
+    @-webkit-keyframes  slide_tooltip_leave { from { opacity: 1; padding-top: 25px; padding-bottom: 25px;} to { opacity: 0; padding-top: 0px; padding-bottom: 0px;}}
+    @-o-keyframes       slide_tooltip_leave { from { opacity: 1; padding-top: 25px; padding-bottom: 25px;} to { opacity: 0; padding-top: 0px; padding-bottom: 0px;}}
+    @-moz-keyframes     slide_tooltip_leave { from { opacity: 1; padding-top: 25px; padding-bottom: 25px;} to { opacity: 0; padding-top: 0px; padding-bottom: 0px;}}
+
+    .slide_tooltip-leave-active p {
+        animation: tooltip_content_p_leave 0.5s ease-in-out;
+    }
+
+     @keyframes tooltip_content_p_leave { from { line-height: 1.8em; }  to { line-height: 0em; }}
+     @-webkit-keyframes tooltip_content_p_leave { from { line-height: 1.8em; }  to { line-height: 0em; }}
+     @-o-keyframes tooltip_content_p_leave { from { line-height: 1.8em; }  to { line-height: 0em; }}
+     @-moz-keyframes tooltip_content_p_leave { from { line-height: 1.8em; }  to { line-height: 0em; }}
+
+}

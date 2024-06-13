@@ -1,0 +1,200 @@
+﻿/* ----------------------------------------------------------------------------*/
+/* -- CHECKBOX  ---------------------------------------------------------------*/
+/* ----------------------------------------------------------------------------*/
+
+
+@import '../abstracts/_variables.scss';
+
+/* -- Standard */
+
+input.checkbox[type="checkbox"] {
+    height: 0; /* kein display:none damit clientseitige Validierung funktioniert (unobstrusive) */
+    opacity: 0;
+    position: absolute;
+    width: 0;
+
+    + label {
+        cursor: pointer;
+        position: relative;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        padding-left: 27px;
+
+        @media screen and (max-width: $viewport_s_max_width) {
+            padding-top: 6px;
+            padding-bottom: 0px;
+        }
+
+        &::after {
+            color: #fff;
+            content: '\e801';
+            font-family: "fontello";
+            font-size: 12px;
+            width: 12px;
+            max-width: 0;
+            height: 12px;
+            left: 3px;
+            line-height: 12px;
+            position: absolute;
+            top: 9px;
+            overflow: hidden;
+            -webkit-transition: all 0.30s;
+            -moz-transition: all 0.30s;
+            -o-transition: all 0.30s;
+            transition: all 0.30s;
+
+            @media screen and (max-width: $viewport_s_max_width) {
+                top: 11px;
+            }
+        }
+
+        &::before {
+            border: 1px solid #aaa;
+            border-radius: 3px;
+            height: 18px;
+            vertical-align: top;
+            width: 18px;
+            position: absolute;
+            content: '';
+            top: 6px;
+            left: 0;
+            background-color: #fff;
+
+            @media screen and (max-width: $viewport_s_max_width) {
+                top: 8px;
+            }
+        }
+
+        &:hover::before {
+            border: 1px solid #666;
+        }
+
+        + span.field-validation-error {
+            margin: 0 0 0 5px;
+        }
+    }
+
+    + input[type="hidden"] + label {
+        cursor: pointer;
+        position: relative;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        padding-left: 27px;
+
+        &::after {
+            color: #fff;
+            content: '\e801';
+            font-family: "fontello";
+            font-size: 12px;
+            width: 12px;
+            max-width: 0;
+            height: 12px;
+            left: 3px;
+            line-height: 12px;
+            position: absolute;
+            top: 9px;
+            overflow: hidden;
+            -webkit-transition: all 0.30s;
+            -moz-transition: all 0.30s;
+            -o-transition: all 0.30s;
+            transition: all 0.30s;
+        }
+
+        &::before {
+            border: 1px solid #aaa;
+            border-radius: 3px;
+            height: 18px;
+            vertical-align: top;
+            width: 18px;
+            position: absolute;
+            content: '';
+            top: 6px;
+            left: 0;
+            background-color: #fff;
+        }
+
+        &:hover::before {
+            border: 1px solid #666;
+        }
+    }
+
+    &:checked {
+        + label {
+            &::after {
+                color: #666;
+                content: '\e801';
+                font-family: "fontello";
+                font-size: 12px;
+                left: 3px;
+                line-height: 12px;
+                position: absolute;
+                top: 9px;
+                width: 12px;
+                height: 12px;
+                max-width: 12px;
+
+                @media screen and (max-width: $viewport_s_max_width) {
+                    top: 11px;
+                }
+            }
+
+            &::before {
+                border: 1px solid #666;
+            }
+
+            &label::before {
+                border: 1px solid #666;
+            }
+        }
+
+        + input[type="hidden"] + label::after {
+            color: #666;
+            content: '\e801';
+            font-family: "fontello";
+            font-size: 12px;
+            left: 3px;
+            line-height: 12px;
+            position: absolute;
+            top: 9px;
+            width: 12px;
+            height: 12px;
+            max-width: 12px;
+        }
+    }
+}
+
+
+input.checkbox[type="checkbox"]:focus + label::before,
+input.checkbox[type="checkbox"]:checked:focus + label::before,
+input.checkbox[type="checkbox"]:focus + input[type="hidden"] + label::before,
+input.checkbox[type="checkbox"]:checked:focus + input[type="hidden"] + label::before {
+    border-color: $ci-color;
+}
+
+/* -- Ausstattungsmerkmale */
+@media screen and (max-width: 640px) {
+
+    .ausstattung input[type="checkbox"] + label {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        width: 100%;
+        border-bottom: 1px solid #ccc;
+        margin-left: 0;
+        padding-left: 30px;
+    }
+
+    .ausstattung input[type="checkbox"] + label::before {
+        top: 17px;
+        left: 0;
+    }
+
+    .ausstattung input[type="checkbox"] + label::after {
+        top: 20px;
+        left: 3px;
+    }
+
+    .ausstattung input[type="checkbox"]:checked + label::after {
+        top: 20px;
+        left: 3px;
+    }
+ }

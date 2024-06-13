@@ -1,0 +1,41 @@
+﻿html{
+    height: 100%;
+}
+body{
+    min-height: 100%;
+}
+#errorCounterHead{
+    width:100%;
+    padding:5px;
+    border-bottom-left-radius:50px;
+    border-bottom-right-radius:55px;
+    border-bottom:2px solid #c3c3c3;
+    position:relative;
+    overflow:hidden;
+}
+#errorCounterHead .wrapper{
+    display:table;
+    margin: auto; 
+    width:80%;
+}
+#errorCounterHead .label-wrapper{
+    vertical-align:bottom;
+    display:table-cell;
+}
+#errorCounterHead .label-wrapper label{
+    font-size:45px;
+    line-height:120px; 
+    margin-left: 10px;
+}
+#errorFlipClock{
+    width: auto !important;
+}
+.green{
+    background-color: #97ff00;
+}
+.orange{
+    background-color: #ffbb00;
+}
+.red{
+    background-color: #ff3860;
+}

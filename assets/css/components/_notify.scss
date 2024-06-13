@@ -1,0 +1,314 @@
+﻿/*----------------------------  notify.css  ----------------------------*\
+
+    - GENERIC
+        -- NOTIFY-WRAPPER
+        
+    - LAYOUT
+        -- NOTIFY-SUCCESS
+        -- NOTIFY-WARNING
+        -- NOTIFY-INFO
+        -- CLOSE-BUTTON
+        -- WARNING-ICON
+    
+\*----------------------------------------------------------------------------*/
+
+@import '../abstracts/_variables.scss';
+
+
+/*  - GENERIC --------------------------------------------------------------- */
+.notificationTransition-move {
+    transition: transform 0.3s, opacity 0.4s;
+}
+
+.notificationTransition-item {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.notificationTransition-enter-active, .notificationTransition-leave-active {
+    transition: opacity 0.4s;
+}
+
+.notificationTransition-enter, .notificationTransition-leave-to {
+    opacity: 0;
+}
+
+
+/*  -- NOTIFY-WRAPPER --------------------------------------------------------------- */
+
+.notify_wrapper {
+    width: calc(100% - 60px);
+    z-index:50;
+}
+
+.stepper .notify_wrapper {
+    width: 100%;
+    position: relative;
+}
+
+.notify_wrapper.fixed {
+    top: 30px;
+    position: fixed;
+    width: calc(100% - 380px);
+    max-width: 760px;
+    z-index: 50;
+}
+
+.stepper .notify_wrapper.fixed {
+    width: calc(100% - 60px);
+    max-width: none;
+    z-index: 50;
+}
+
+.authentifizierung .notify_wrapper {
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+    max-width: 1080px;
+}
+
+.authentifizierung .notify_wrapper.fixed {
+    width: 100%;
+    position: fixed;
+    margin: 0 auto;
+    max-width: 1080px; 
+    left: 0;
+    right: 0;
+}
+
+.vue-notifyjs .alert {
+    border: 0;
+    border-radius: 0.1875rem;
+    color: $color_f_02;
+    padding-top: .9rem;
+    padding-bottom: .9rem;
+    font-size: 14px;
+    z-index: 100;
+    display: inline-block;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+    background-color: #fff;
+    width: 100%;
+    position: absolute;
+    top: 0 !important;
+}
+
+.vue-notifyjs .alert[data-notify="container"] {
+    padding: 20px 10px 20px 20px;
+    min-height: 52px;
+    -webkit-box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.15);
+}
+
+/*  - LAYOUT ------------------------------------------------------- */
+
+/* -- NOTIFY-SUCCESS ----------------------------------------------- */
+
+    .vue-notifyjs .alert.alert-success {
+        border: 3px solid #7cd07a;
+        background-color: #ccffcc
+    }
+
+.vue-notifyjs .alert.alert-success span:before {
+    content: '\e826';
+    color: #090;
+    float: left;
+    font-family: "fontello";
+    font-size: 28px;
+    margin: 3px 10px 0px -40px;
+}
+
+.vue-notifyjs .alert.alert-danger {
+    border: 3px solid #ff5a54;
+}
+
+/* -- NOTIFY-WARNING  ---------------------------------------------- */
+
+    .vue-notifyjs .alert.alert-warning {
+        border: 3px solid #ff5a54;
+        background-color: #ffcccc;
+    }
+
+.vue-notifyjs .alert.alert-warning span:before {
+    content: '\e825';
+    color: #f33;
+    float: left;
+    font-family: "fontello";
+    font-size: 28px;
+    margin: 3px 10px 0px -40px;
+}
+
+
+/* -- NOTIFY-INFO --------------------------------------------------- */
+
+    .vue-notifyjs .alert.alert-info {
+        border: 3px solid #ffcb81;
+        background-color: #ffffcc;
+    }
+
+.vue-notifyjs .alert.alert-info span:before {
+    content: '\e822';
+    color: #ff9900;
+    float: left;
+    font-family: "fontello";
+    font-size: 28px;
+    margin: 3px 10px 0px -40px;
+}
+
+
+/*  -- CLOSE-BUTTON --------------------------------------------------------------- */
+
+.vue-notifyjs .alert button.close {
+    position: absolute;
+    right: 5px;
+    top: 20px;
+    margin-top: -13px;
+    width: 25px;
+    height: 25px;
+    padding: 3px;
+    color: #999;
+    opacity: 1;
+    text-shadow: none;
+    line-height: 0;
+    outline: 0;
+    font-size: 0;
+}
+
+.vue-notifyjs .alert button.close:before {
+    content: '\e803';
+    font-family: "fontello";
+    font-size: 16px;
+}
+
+.vue-notifyjs .alert button.close:hover {
+    color: #666;
+}
+
+/*  -- WARNING-ICON --------------------------------------------------------------- */
+
+
+.vue-notifyjs .alert i.fa, .vue-notifyjs .alert i.now-ui-icons {
+    font-size: 20px;
+}
+
+
+.vue-notifyjs .alert span[data-notify="icon"] {
+    font-size: 22px;
+    display: block;
+    left: 19px;
+    position: absolute;
+    top: 50%;
+    margin-top: -11px;
+}
+
+
+
+.vue-notifyjs .alert .close ~ span {
+    display: block;
+    max-width: 79%;
+    margin-left: 35px;
+}
+
+.vue-notifyjs .alert.alert-with-icon {
+    padding-left: 65px;
+}
+
+/*  -- STEPPER --------------------------------------------------------------- */
+.stepper .notifications {
+    position: relative;
+} 
+
+@media screen and (max-width: 1140px) {
+    .vue-notifyjs .alert[data-notify="container"] {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1160px) {
+    .stepper .notify_wrapper.fixed {
+        width: 100%;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        max-width: 1080px;
+    }
+}
+
+@media screen and (max-width: 1160px) {
+    .authentifizierung .notify_wrapper, .authentifizierung .notify_wrapper.fixed {
+        width: calc(100% - 60px);
+        max-width: 1080px;
+    }
+}
+
+
+/** Viewport M **/
+@media screen and (max-width: 980px) {
+    .notify_wrapper.fixed {
+        width: calc(100% - 340px);
+    }
+
+    .stepper .notify_wrapper.fixed {
+        width: calc(100% - 60px);
+    }
+}
+
+/** Viewport S **/
+@media screen and (max-width: 640px) {
+
+    .stepper .notifications, .authentifizierung .notifications {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+    }
+
+    .vue-notifyjs .alert[data-notify="container"] {
+        height: auto;
+        width: 100%;
+        bottom: 0;
+        position: relative;
+        top: auto !important;
+        -webkit-box-shadow: 0 -4px 8px 0px rgba(0, 0, 0, 0.15);
+        -moz-box-shadow: 0 -4px 8px 0px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 -4px 8px 0px rgba(0, 0, 0, 0.15);
+        padding: 20px 30px 20px 25px;
+    }
+
+    .vue-notifyjs .alert.alert-info {
+        border: 0;
+        border-top: 2px solid #ffcb81;
+        background-color: #ffffcc;
+    }
+
+    .vue-notifyjs .alert.alert-warning {
+        border: 0;
+        border-top: 2px solid #ff5a54;
+        background-color: #ffcccc;
+    }
+
+    .vue-notifyjs .alert.alert-success {
+        border: 0;
+        border-top: 2px solid #7cd07a;
+        background-color: #ccffcc
+    }
+
+    .notify_wrapper, .stepper .notify_wrapper, .authentifizierung .notify_wrapper {
+        width: 100%;
+        position: fixed;
+        z-index: 1000;
+        bottom: 0px;
+        left: 0;
+    }
+
+    .notificationTransition-enter-active, .notificationTransition-leave-active {
+        transition: opacity 0.4s;
+        transform: translateY(0);
+    }
+
+    .notificationTransition-enter, .notificationTransition-leave-to {
+        opacity: 0;
+        transform: translateY(80px);
+    }
+}

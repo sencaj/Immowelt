@@ -1,0 +1,15 @@
+﻿
+/* - BOX-SHADOW ----------------------------------------------------------------*/
+
+@mixin box-shadow($inset, $horizontal_offset, $vertical_offset, $blur, $spread, $color) {
+    @if $inset {
+        box-shadow: inset $horizontal_offset $vertical_offset $blur $spread $color;
+        -webkit-box-shadow: inset $horizontal_offset $vertical_offset $blur $spread $color;
+        -moz-box-shadow: inset $horizontal_offset $vertical_offset $blur $spread $color;
+    }
+    @else {
+        box-shadow: $horizontal_offset $vertical_offset $blur $spread $color;
+        -webkit-box-shadow: $horizontal_offset $vertical_offset $blur $spread $color;
+        -moz-box-shadow: $horizontal_offset $vertical_offset $blur $spread $color;
+    }
+}

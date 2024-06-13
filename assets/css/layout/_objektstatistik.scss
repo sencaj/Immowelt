@@ -1,0 +1,440 @@
+﻿.summe {
+    color: #ffb200 !important;
+}
+
+.pdftable .table_01 td, .table_01 th {
+    padding-top: 8px;
+    padding-right: 0px;
+    padding-bottom: 8px;
+    padding-left: 0px;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.table_01 th, tr {
+    background: #fff !important;
+   
+}
+.table_02 td::before {
+    height: auto;
+   
+}
+
+.objectDetailHeader h1 {
+    margin:0;
+}
+/*.h4 grid_12o12 {
+    padding: 0,0,0,0;
+}*/
+#objektentable tbody tr td:nth-of-type(1) {
+    cursor: pointer;
+}
+.ui-datepicker select.ui-datepicker-month,
+.ui-datepicker select.ui-datepicker-year {
+    width: 44%;
+    margin-right: 10px;
+    text-align:center; 
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.highcharts-root, .highcharts-container {
+    overflow: visible !important;
+}
+
+/*Button responsivity*/
+/*  -- MEDIA-QUERY > 640 & < 980 ---------------------------------------------*/
+@media screen and (min-width:641px)and (max-width:980px) {
+    .btn_30 {
+        width: 30% !important;
+    }
+}
+
+
+
+/*  -- MEDIA-QUERY < 980 ---------------------------------------------*/
+
+@media screen and (max-width:981px) {
+
+    .header .logo {
+        position: relative !important;
+    }
+
+    .header .content_wrapper {
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+    }
+}
+
+/*  -- MEDIA-QUERY > 980 ---------------------------------------------*/
+
+@media screen and (min-width:981px) {
+
+    .btn_100 {
+        width: 100% !important;
+    }
+
+    .header {
+        height: auto !important;
+    }
+}
+
+
+/*Chart list*/
+
+ul.list li {
+     margin-bottom: 10px;
+}
+
+
+ul.list li:before {
+     padding: 0 6px 0 0;
+}
+
+
+/*Icons for Sonderwerbeformen*/
+
+.icon-arrow-alt-circle-up, .icon-play-circled, .icon-glyph-2, .icon-star, .icon-up-circled {
+    color: #ffb200;
+    font-size: 20px;
+}
+
+.icon-angle-double-up {
+    color: #ffb200;
+    font-size: 25px;
+}
+
+/*Margins*/
+
+.margin_right_5 {
+    margin-right: 5px;
+}
+
+
+/* Charts */
+#gesamtSt{
+    width: 90%;
+    display: inline-block;
+}
+
+
+/* Pagination */
+.pagination a[data-selected='true'] {
+    background: #ffb200 !important;
+}
+.pagination {
+    white-space: nowrap;
+}
+
+.pagination a {
+    margin-left: 3.5px;
+    position: relative;
+    left: -10px;
+}
+
+.ergebnisListePadding {
+    padding-top: 200px;
+}
+.exposeaufrufePadding {
+    padding-top: 100px;
+}
+.imSuchagentPadding {
+    margin-top: 350px;
+}
+.kontaktePadding {
+    padding-top: 50px;
+}
+.klickratePadding {
+    padding-top: 400px;
+}
+.perObjectPadding {
+    padding-top:350px;
+}
+
+/*******************************/
+/* wrapping of filter controls */
+/*******************************/
+.iw_content .grid_row .filter_controls {
+    font-size: 0px;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+/* all inputs should be the same size */
+.iw_content .grid_row .filter_controls input,
+.iw_content .grid_row .filter_controls .picker_wrapper {
+    width: 170px;
+}
+
+.iw_content .grid_row .filter_controls .filter_control {
+    display: inline-block;
+    padding-right: 20px;
+    font-size: 14px;
+    white-space: nowrap;
+    vertical-align: top;
+}
+
+/*Error box should embed same size aside input*/
+.filter_controls .field-validation-error {
+    width: 170px;
+}
+
+    /* normally everything is inline-block without wrapping */
+    .iw_content .grid_row .filter_controls .picker_wrapper,
+    .iw_content .grid_row .filter_controls .filter_control .filter_label {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+/* anbieter-id jumps to new row, so block it and set the first label to the same size as anbieter label */
+@media screen and (max-width: 1070px) {
+    /*.iw_content .grid_row .filter_controls .filter_control:last-child {
+        display: block;
+    }*/
+
+    .iw_content .grid_row .filter_controls .filter_control:first-child .filter_label {
+        width: 98px;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    /* block each element if screen is too narrow */
+    .iw_content .grid_row .filter_controls .filter_control {
+        display: block;
+    }
+
+    /* if each element is block labels should all be the same size */
+    .iw_content .grid_row .filter_controls .filter_control .filter_label {
+        width: 98px;
+    }
+}
+@media screen and (max-width:400px) {
+
+    .page-navigation > .btn_01 {
+        transform: scale(0.85);
+        margin: -2px;
+    }
+}
+@media screen and (max-width:321px) {
+
+    .page-navigation > .btn_01 {
+        transform: scale(0.8);
+        margin: -2px;
+    }
+}
+
+/* CSS specific to iOS devices */ 
+@supports (-webkit-overflow-scrolling: touch) {
+
+    /* Font size 16px (default one) prevents ios safari from zooming in input fields */
+    @media screen and (-webkit-min-device-pixel-ratio:0) and (max-device-width:1024px) {
+        select,
+        textarea,
+        input {
+            font-size: 16px;
+        }
+    }
+}
+
+
+/*Print*/
+.simple_header .navi_image {
+    background-image: url("~/../dist/images/logo_immowelt_print.png");
+    background-repeat: no-repeat;
+    display: block;
+    height: 47px;
+    width: 330px;
+    margin: 35px 0 18px 0px;
+}
+
+.simple_header .navi_image_ie {
+    background-image: url("~/../dist/images/logo_immowelt_print.png");
+    background-repeat: no-repeat;
+    display: block;
+    width: 330px;
+    margin: 35px 0 18px 0px;
+}
+
+thead > tr.t_center > th:first-child {
+    width: 25%;
+}
+
+div > .table_02 > thead > tr > th {
+    font-size: 12px !important;
+}
+
+.objektenPrint {
+    margin-left: 20px !important;
+    margin-right: -20px !important;
+}
+
+.objektenPrint:not(:first-child) {
+    margin-top: 160px !important;
+}
+
+div > table.table_02 {
+    margin-left: 20px !important;
+    margin-top: 40px !important;
+    width: 100% !important;
+}
+
+.marginBlock {
+    height: 60px !important;
+}
+
+tbody.table_02 > tr > td.t_small {
+    width: 30%;
+}
+
+#objektenPrint {
+    margin-top: 60px !important;
+}
+
+.filter_dropdown.neubauprojekt {
+    position: relative;
+}
+
+.neubauprojekt .flyout {
+    max-height: 320px;
+    overflow: auto;
+}
+
+.neubauprojekt .flyout_section ul {
+    position: relative;
+}
+
+.neubauprojekt .flyout_section ul li {
+    padding-left: 20px;
+}
+
+.filter_dropdown.neubauprojekt input[type="radio"] {
+    position: absolute;
+    left: 0;
+}
+
+.neubauprojekt .inner_searchWhat {
+    width: 100%;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: -4px
+}
+
+.hidden {
+    display: none;
+}
+
+.service_error_message
+{
+    margin-top: 90px;
+}
+
+#additionalFilterForm .form_component {
+    margin-bottom: 25px;
+}
+
+#realSubmitButton {
+    margin-bottom: 10px;
+}
+
+.field-validation-warning {
+    font-weight: normal;
+    position: static;
+    color: #ffb200;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    display: block;
+    white-space: normal;
+    word-wrap: break-word;
+    min-width: 170px;
+}
+
+.objektstatistik-title {
+    border-left: 1px solid #ffb200
+}
+
+.objektstatistik-date {
+    line-height: 14px
+}
+
+/* Promo section under main chart*/
+
+.os-promo {
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+    display: flex; /* NEW, Spec - Firefox, Chrome, Opera */
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-top: 27px;
+}
+
+.os-promo > div {
+    display: flex;
+    align-items: flex-start;
+    flex-basis: 100%;
+    min-height: 80px;
+}
+
+.os-promo > div:first-child {
+    margin-right: 15px;
+}
+
+.os-promo img.iw_left {
+    width: 34px;
+}
+
+.os-promo img.iw_right {
+    width: 50px;
+    margin-top: 8px;
+    margin-left: 10px;
+}
+
+.os-promo__content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.os-promo__content a {
+    margin-top: 2px;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.os-promo__content h3 {
+    font-weight:600;
+}
+
+.os-promo__content h3 p {
+    margin-top:5px;
+}
+
+/*  -- MEDIA-QUERY < 768, 980 & < 1150 ---------------------------------------------*/
+@media screen and (min-width:980px) and (max-width:1150px), (max-width: 768px) {
+    .os-promo img.iw_right {
+        display: none;
+    }
+}
+
+/*  -- MEDIA-QUERY  ---------------------------------------------*/
+@media screen and (max-width: 768px) {
+    .os-promo {
+        display: block;
+    }
+
+    .os-promo > div {
+        padding-bottom: 20px !important;
+    }
+
+    .os-promo > div:last-child {
+        margin: 20px 0px 0px 0px;
+    }
+}

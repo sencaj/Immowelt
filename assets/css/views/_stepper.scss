@@ -1,0 +1,160 @@
+﻿/* ----------------------------------------------------------------------------*/
+/* -- STEPPER  ----------------------------------------------------------------*/
+/* ----------------------------------------------------------------------------*/
+
+@import '../abstracts/_variables.scss';
+
+.steppercomponent {
+    background-color: #fff;
+    padding: 30px;
+    min-height: calc(100vh - 70px);
+
+    input [type="radio"].radiobox {
+        & + label {
+            &:before, &:after, & span, & i {
+                -webkit-transition: opacity 0.5s ease-in-out;
+                -moz-transition: opacity 0.5s ease-in-out;
+                -ms-transition: opacity 0.5s ease-in-out;
+                -o-transition: opacity 0.5s ease-in-out;
+                transition: opacity 0.5s ease-in-out;
+            }
+        }
+    }
+
+    .disabled {
+        
+        .flexbox_container label {
+            border: 1px solid #ececec !important;
+            cursor: default;
+
+            h3 {
+                color: $stepper_box_label;
+            }
+
+            &:before, &:after, & span, & i {
+                opacity: 0.4;
+                filter: alpha(opacity=40);
+                cursor: default;
+            }
+        }
+
+        input[type="radio"]:checked + label::after {
+            background: #FFF none repeat scroll 0 0;
+        }
+    }
+}
+
+.box_wohnen_auf_zeit {
+    margin-right: 30px;
+}
+
+.stepper.content {
+    width: 100%;
+}
+
+/* -- Animation ------------------------------------ */
+
+.anim_fadeInDown {
+    animation-duration: 0.4s;
+    -moz-animation-duration: 0.4s;
+    -webkit-animation-duration: 0.4s;
+    animation-name: fadeInDown;
+    -moz-animation-name: fadeInDown;
+    -webkit-animation-name: fadeInDown;
+    animation-timing-function: ease-out;
+    -moz-animation-timing-function: ease-out;
+    -webkit-animation-timing-function: ease-out;
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translate3d(0,30%,0)
+    }
+
+    to {
+        opacity: 1;
+        transform: none
+    }
+}
+
+@-webkit-keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translate3d(0,30%,0)
+    }
+
+    to {
+        opacity: 1;
+        transform: none
+    }
+}
+
+@-moz-keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translate3d(0,30%,0)
+    }
+
+    to {
+        opacity: 1;
+        transform: none
+    }
+}
+
+@-o-keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translate3d(0,30%,0)
+    }
+
+    to {
+        opacity: 1;
+        transform: none
+    }
+}
+
+/* -- ANIMATION WOHNEN AUF ZEIT ------------------*/
+
+.stepperbox-enter-active {
+    transition: .4s opacity .5s, max-width .4s ease-out, .2s margin-right .4s ease-out;
+    -moz-transition: .4s opacity .5s, max-width .4s ease-out, .2s margin-right .4s ease-out;
+    -webkit-transition: .4s opacity .5s, max-width .4s ease-out, .2s margin-right .4s ease-out;
+    -o-transition: .4s opacity .5s, max-width .4s ease-out, .2s margin-right .4s ease-out;
+    max-width: 120px;
+    overflow: hidden;
+    margin-right: 30px;
+    height: 121px;
+}
+
+.stepperbox-enter {
+    opacity: 0;
+    max-width: 0px;
+    margin-right: 0px;
+    height: 121px;
+}
+
+.stepperbox-leave-active {
+    transition: opacity .4s, .4s max-width .4s ease-out, .4s margin-right .4s ease-out;
+    -moz-transition: opacity .4s, .4s max-width .4s ease-out, .4s margin-right .4s ease-out;
+    -webkit-transition: opacity .4s, .4s max-width .4s ease-out, .4s margin-right .4s ease-out;
+    -o-transition: opacity .4s, .4s max-width .4s ease-out, .4s margin-right .4s ease-out;
+    opacity: 1;
+    margin-right: 30px;
+    max-width: 120px;
+}
+
+.stepperbox-leave-to {
+    opacity: 0;
+    margin-right: 0px;
+    max-width: 0px;
+}
+
+
+/*  -- MEDIA-QUERY 641 < 980 (Viewport: M) -----------------------------------*/
+
+@media screen and (min-width: 641px) and (max-width: 980px) {
+    .steppercomponent {
+        margin-bottom: 0px;
+    }
+}

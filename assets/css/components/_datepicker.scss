@@ -1,0 +1,149 @@
+﻿@import '../abstracts/_variables.scss';
+
+.datepicker-wrapper {
+    position: relative;
+
+    input.input_date {
+        width: 110px !important;
+        float: left;
+    }
+
+    .icon-calendar {
+        position: relative;
+        top: 5px;
+        cursor: pointer;
+        transition: color 0.3s ease-in-out;
+
+        &:hover {
+            color: #000;
+            transition: color 0s linear;
+        }
+
+        &.disabled {
+            color: #C0C0C0;
+            cursor: default;
+        }
+    }
+}
+
+.datepicker {
+    position: absolute;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    z-index: 50;
+    background-color: white;
+    width: 275px;
+    top: 40px;
+    box-shadow: 0px 0px 4px 0px rgba(0,0,0,.15);
+    -webkit-box-shadow: 0px 0px 4px 0px rgba(0,0,0,.15);
+    -moz-box-shadow: 0px 0px 4px 0px rgba(0,0,0,.15);
+
+    .nav_right, .nav_left {
+        position: absolute;
+        top: 0;
+        font-size: 24px;
+        color: $ci-color;
+        cursor: pointer;
+        padding: 10px;
+        z-index: 20;
+    }
+
+    .nav_left {
+        left: 17px;
+    }
+
+    .nav_right {
+        right: 17px;
+    }
+
+    .line {
+        display: block;
+        height: 6px;
+        border-radius: 5px 5px 0 0;
+        background-color: $ci-color;
+    }
+
+    .nav-title {
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    top: 11px;
+    z-index: 10;
+    cursor: default;
+}
+}
+
+.datepicker-above {
+    bottom: 41px;
+    top: initial !important;
+}
+
+.datepicker-title {
+    position: relative;
+    height: 20px;
+    font-weight: normal;
+    font-size: 20px;
+
+    .datepicker-title span {
+        position: absolute;
+        background-color: #fbb200;
+        left: -20px;
+        top: -20px;
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+    }
+}
+
+.datepicker-navigation {
+    position: relative;
+    font-weight: bold;
+    height: 50px;
+
+    .material-icons {
+        line-height: 40px;
+    }
+}
+
+.datepicker-content {
+    padding: 0px 10px 10px 10px;
+
+    table td {
+        text-align: center;
+
+        span {
+            position: relative;
+            height: 36px;
+            display: inline-block;
+            font-size: 13px;
+            border-radius: 50%;
+            width: 36px;
+            line-height: 36px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #ffd87f;
+            }
+        }
+    }
+
+    table th {
+        font-weight: bold;
+        padding-bottom: 3px;
+        cursor: default;
+    }
+
+    .today {
+        font-weight: bold;
+    }
+
+    .inactive {
+        color: #bfbfbf !important;
+    }
+
+    .selected span {
+        font-weight: bold;
+        background-color: #ffd87f;
+    }
+}

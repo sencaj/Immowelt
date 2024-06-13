@@ -1,0 +1,139 @@
+﻿/*  ---------------------------------------------------------------------------*/
+/*  -- FOOTER  ----------------------------------------------------------------*/
+/*  ---------------------------------------------------------------------------*/
+
+@import '../abstracts/_variables.scss';
+@import '../abstracts/_mixins.scss';
+
+
+.footer {
+    background-color: #fff;
+    bottom: 0;
+    color: $color_f_02;
+    padding: 20px 0 0 0;
+    position: static;
+    text-align: center;
+    width: 100%;
+    z-index: 99;
+    border-top: solid 1px #ccc;
+    margin-top: 70px;
+
+    @media screen and (max-width: $viewport_s_max_width) {
+        height: auto;
+        padding: 20px 20px 0px 20px;
+        position: static;
+        margin-top: 0;
+        @include box-shadow($shf_inset, $shf_horizontal_offset, $shf_vertical_offset, $shf_blur, $shf_spread, $shf_color);
+    }
+
+    .h4 {
+        @media screen and (max-width: $viewport_s_max_width) {
+            font-size: 1.25em;
+            font-weight: 400;
+        }
+    }
+
+    .feedback_wrapper {
+        max-width: 695px;
+        margin: 0 auto;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .support p {
+        padding-bottom: 0;
+    }
+
+    .feedback_action {
+        text-align: left;
+        position: relative;
+        height: 105px;
+
+        @media screen and (max-width: $viewport_s_max_width) {
+            padding-bottom: 0px;
+            height: 75px;
+            text-align: center;
+        }
+
+        p:before {
+            text-align: left;
+        }
+
+        .icon-smile {
+            margin-left: 50px;
+            width: 260px;
+            position: absolute;
+            left: 27px;
+            right: 0;
+            margin: 0 auto;
+            top: 20px;
+
+            @media screen and (max-width: $viewport_s_max_width) {
+                left: 0;
+            }
+
+            &:before {
+                content: '\e82f';
+                position: absolute;
+                font-size: 44px;
+                color: #777;
+                top: 16px;
+                left: -55px;
+
+                @media screen and (max-width: $viewport_s_max_width) {
+                    font-size: 22px;
+                    top: 2px;
+                    left: 22px;
+                }
+            }
+        }
+
+        .icon-life-ring {
+            margin-left: 50px;
+            width: auto;
+            position: relative;
+            display: inline-block;
+            left: initial;
+            right: 35px;
+            margin: 0 auto;
+            top: 20px;
+            float: right;
+
+            @media screen and (max-width: $viewport_s_max_width) {
+                width: 154px;
+                position: absolute;
+                display: inline-block;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+                top: 20px;
+            }
+
+            &:before {
+                position: absolute;
+                font-size: 42px;
+                color: #777;
+                top: 16px;
+                left: -58px;
+
+                @media screen and (max-width: $viewport_s_max_width) {
+                    font-size: 20px;
+                    top: 3px;
+                    left: -18px;
+                }
+            }
+        }
+    }
+
+    .input_feedback {
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: left;
+
+        textarea {
+            height: 100px;
+        }
+    }
+}

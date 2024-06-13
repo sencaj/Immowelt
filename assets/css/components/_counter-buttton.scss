@@ -1,0 +1,66 @@
+﻿/* ----------------------------------------------------------------------------*/
+/* -- COUNTER-BUTTON  ---------------------------------------------------------*/
+/* ----------------------------------------------------------------------------*/
+
+
+.btn_counter {
+    width: 140px;
+    position: relative;
+
+    input[type="text"] {
+        padding: 6px 46px;
+        position: relative;
+        text-align: center;
+        width: 100%;
+        z-index: 1;
+    }
+
+    .btn_01 {
+        font-size: 24px;
+        font-weight: 300;
+        height: 34px;
+        padding: 5px 11px;
+        position: absolute;
+        top: 1px;
+        width: 40px;
+        z-index: 2;
+
+        &.btn_minus {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+            -webkit-border-top-right-radius: 0;
+            -webkit-border-bottom-right-radius: 0;
+            -moz-border-radius-topright: 0;
+            -moz-border-radius-bottomright: 0;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            border-right: 1px solid #ccc;
+            left: 1px;
+            margin: 0 -2px 0 0;
+        }
+
+        &.btn_plus {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+            -webkit-border-top-left-radius: 0;
+            -webkit-border-bottom-left-radius: 0;
+            -moz-border-radius-topleft: 0;
+            -moz-border-radius-bottomleft: 0;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            border-left: 1px solid #ccc;
+            right: 1px;
+            margin: 0 0 0 -3px;
+        }
+    }
+}

@@ -1,0 +1,177 @@
+﻿/* ----------------------------------------------------------------------------*/
+/* -- DETAILVIEW: PREISE  -----------------------------------------------------*/
+/* ----------------------------------------------------------------------------*/
+
+
+.form_component {
+    &.warmmiete {
+        border-top: 1px solid #ccc;
+        padding-top: 27px;
+        margin-bottom: 0;
+
+        .inputfield, .comment, .field-validation-error {
+            margin-left: 30px;
+        }
+
+        &:before {
+            content: "=";
+            font-size: 26px;
+            position: relative;
+            top: 34px;
+            float: left;
+            color: #888;
+        }
+    }
+
+    &.kaltmiete {
+        .inputfield, .field-validation-error {
+            margin-left: 30px;
+        }
+    }
+
+    &.nebenkosten {
+        .inputfield, .field-validation-error {
+            margin-left: 30px;
+        }
+
+        &:before {
+            content: "+";
+            font-size: 26px;
+            position: relative;
+            top: 30px;
+            float: left;
+            color: #888;
+        }
+    }
+
+    &.heizkosten {
+        .inputfield, .field-validation-error {
+            margin-left: 30px;
+        }
+
+        &:before {
+            content: "+";
+            font-size: 26px;
+            position: relative;
+            top: 30px;
+            float: left;
+            color: #888;
+        }
+    }
+}
+
+
+input[type="checkbox"] + label[for="NebenkostenInklusiveHeizkosten"] {
+    margin-left: 30px;
+}
+
+
+.kosten {
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+/* -- ANIMATIOIN_SLIDE_HEIZKOSTEN(VUE) --------------------------------------------------- */
+
+.heizkosten-slide-enter-active {
+    animation: heizkosten-slideDown 0.3s ease-out;
+    -webkit-animation: heizkosten-slideDown 0.3s ease-out;
+    opacity: 1;
+}
+
+@keyframes heizkosten-slideDown {
+    from {
+        transform: translateY(-30%);
+        opacity: 0;
+        height: 0px;
+        margin-bottom: 0px;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+        height: 61px;
+    }
+}
+
+@-moz-keyframes heizkosten-slideDown {
+    from {
+        transform: translateY(-30%);
+        opacity: 0;
+        height: 0px;
+        margin-bottom: 0px;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+        height: 61px;
+    }
+}
+
+@-webkit-keyframes heizkosten-slideDown {
+    from {
+        transform: translateY(-30%);
+        opacity: 0;
+        height: 0px;
+        margin-bottom: 0px;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+        height: 61px;
+    }
+}
+
+
+.heizkosten-slide-leave-active {
+    animation: heizkosten-slideUp 0.3s ease-out;
+    -webkit-animation: heizkosten-slideUp 0.3s ease-out;
+    opacity: 0;
+}
+
+@keyframes heizkosten-slideUp {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+        height: 61px;
+    }
+
+    to {
+        transform: translateY(-30%);
+        opacity: 0;
+        height: 0px;
+        margin-bottom: 0px;
+    }
+}
+
+@-moz-keyframes heizkosten-slideUp {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+        height: 61px;
+    }
+
+    to {
+        transform: translateY(-30%);
+        opacity: 0;
+        height: 0px;
+        margin-bottom: 0px;
+    }
+}
+
+@-webkit-keyframes heizkosten-slideUp {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+        height: 61px;
+    }
+
+    to {
+        transform: translateY(-30%);
+        opacity: 0;
+        height: 0px;
+        margin-bottom: 0px;
+    }
+}

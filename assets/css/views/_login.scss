@@ -1,0 +1,16 @@
+﻿/* - LOGIN -------------------------------------------------------------------*/
+.authentifizierung.content_wrapper {
+    height: calc(100vh - 145px);
+}
+
+.card,
+.security_advice {
+    margin: 25px auto;
+    max-width: 405px;
+    position: relative;
+    top: calc(50vh - 395px); /* login vertical zentrieren*/
+}
+
+.security_advice {
+    margin-bottom: 36px;
+}

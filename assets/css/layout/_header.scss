@@ -1,0 +1,168 @@
+﻿/* ----------------------------------------------------------------------------*/
+/* -- HEADER  -----------------------------------------------------------------*/
+/* ----------------------------------------------------------------------------*/
+
+@import '../abstracts/_variables.scss';
+@import '../abstracts/_mixins.scss';
+
+/*  -- Simple Header ----------------------------------------------------------*/
+
+.simple_header {
+    background-color: #fff;
+    overflow: hidden;
+    height: 70px;
+    border-bottom: solid 3px $ci-color;
+    width: 100%;
+    top: 0;
+    z-index: 30;
+    position: relative;
+
+    @media screen and (max-width: $viewport_m_s_max_width) {
+        border-bottom: 0;
+        background: $ci-color;
+        margin-top: 0;
+        @include box-shadow($shh_inset, $shh_horizontal_offset, $shh_vertical_offset, $shh_blur, $shh_spread, $shh_color);
+    }
+
+    @media screen and (max-width: $viewport_s_max_width) {
+        height: 50px;
+        position: fixed;
+        overflow: visible;
+    }
+
+    .content_wrapper {
+        padding: 0 30px;
+        position: relative;
+
+        .navi_image {
+            left: 0;
+            right: 0;
+            background-size: 100% 26px;
+            background-image: url("~/../dist/images/logo_immowelt_de.svg");
+            background-repeat: no-repeat;
+            display: block;
+            height: 32px;
+            margin: 18px 0;
+            width: 347px;
+            background-size: 100% 32px;
+
+            @media screen and (min-width: $viewport_m_min_width) and (max-width: $viewport_m_max_width) {
+                height: 33px;
+                width: 347px;
+            }
+
+            @media screen and (max-width: $viewport_s_max_width) {
+                background-image: url("~/../dist/images/logo_immowelt_de_blank.svg");
+                background-repeat: no-repeat;
+                margin: 12px auto;
+                background-size: 100% 26px;
+            }
+
+            a.link_02 {
+                position: absolute;
+                right: 30px;
+                top: 0px;
+
+                @media screen and (max-width: $viewport_m_s_max_width) {
+                    &:before {
+                        color: $color_f_02 !important;
+                    }
+                }
+            }
+
+            .message {
+                background-color: #ebebeb;
+                width: 100%;
+                text-align: center;
+                border-bottom: solid 1px #ccc;
+                position: absolute;
+                top: 19px;
+                font-size: 12px;
+                right: 30px;
+                line-height: 28px;
+
+                @media screen and (min-width: $viewport_m_min_width) and (max-width: $viewport_m_max_width) {
+                    color: $color_f_02;
+                }
+                /* extra geschachtelt damit Animation sauber abläuft*/
+                .message_wrapper {
+                    padding: 11px 20px;
+                }
+
+                .loader {
+                    position: absolute;
+                    left: 50%;
+                    margin-left: -120px;
+                    top: 11px;
+                    width: 20px;
+                    float: left;
+                    margin-right: 7px;
+                    height: 20px;
+                    margin-top: 3px;
+                }
+
+                .span {
+                    &::before {
+                        @media screen and (min-width: $viewport_m_min_width) and (max-width: $viewport_m_max_width) {
+                            color: $color_f_02;
+                        }
+                    }
+                }
+            }
+
+            .icon-check:before {
+                margin-right: 7px;
+                font-size: 15px;
+                position: relative;
+                top: 0px;
+                color: $color_f_02;
+            }
+
+            .path {
+                @media screen and (max-width: $viewport_m_s_max_width) {
+                    stroke: $color_f_02;
+                }
+            }
+        }
+    }
+}
+
+/*  -- TITLE BAR --------------------------------------------------------------*/
+
+.title {
+    overflow: hidden;
+    position: relative;
+    z-index: 5;
+    padding: 10px 0;
+    height: 60px;
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    font-weight: lighter;
+    transition: height .4s ease;
+    -moz-transition: height .4s ease;
+    -webkit-transition: height .4s ease;
+
+    h1 {
+        font-size: 1.445em;
+        line-height: 38px;
+        margin: 0 0 0 30px;
+        transition: line-height .4s ease;
+        -moz-transition: line-height .4s ease;
+        -webkit-transition: line-height .4s ease;
+    }
+
+    p {
+        padding: 0;
+        margin: 0 0 0 30px;
+        color: #777;
+    }
+
+    &.is_adress {
+        height: 75px;
+
+        h1 {
+            line-height: 30px;
+        }
+    }
+}

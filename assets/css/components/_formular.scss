@@ -1,0 +1,399 @@
+﻿/*----------------------------  Formularelemente  ----------------------------*\
+
+    CONTENT:
+    - GENERIC
+        -- LINK
+
+    
+
+\*----------------------------------------------------------------------------*/
+
+@import '../abstracts/_variables.scss';
+
+
+/*----------------------------------------------------------------------------*\                                
+    - GENERIC
+\*----------------------------------------------------------------------------*/
+
+/*  -- LINK  -----------------------------------------------------------------*/        
+
+a {
+    color: $color_f_02;
+    text-decoration: underline;
+    -webkit-tap-highlight-color: rgba(255,0,0,.5);
+}
+
+a:hover {
+    color: #e65100;
+    text-decoration: underline;
+}
+
+a.link_01 {
+    color: #e65100;
+    text-decoration: none;
+    padding: 0 0 0 15px;
+    display: inline-block
+}
+
+a.link_01:focus,
+a.link_01:hover {
+    color: $color_f_02;
+}
+
+
+a.link_02,
+input.link_02 {
+    text-decoration: none;
+    display: inline-block;
+}
+
+.link_01:before {
+    content: '\e80c';
+    font-family: "fontello";
+    padding-right: 3px;
+}
+
+.link_02:before {
+    color: $ci-color;
+    content: '\e80c';
+    font-family: "fontello";
+    font-size: 18px;
+    padding-right: 3px;
+    vertical-align: -1px; /* funktioniert nur einzeilig und bei dieser Schriftgröße! */
+}
+
+
+/*  --- STANDARD FORM ELEMENTS -----------------------------------------------*/
+
+label {
+    display: block; 
+    padding-bottom: 4px;
+}
+
+.inputfield { position:relative; }
+
+.inputfield span {
+    border-radius: 0px 3px 3px 0px;
+    background: #fff;
+    bottom: 1px;
+    display: block;
+    height: 34px;
+    width: 48px;
+    padding: 7px 0 0 0;
+    position: absolute;
+    right: 1px;
+    text-align: center;
+    transition: all 150ms ease-out 0s;
+}
+
+.inputfield span.unit_kwh {
+    width: 80px;
+}
+
+.inputfield input.input-validation-error + span {
+    background-color: transparent;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="date"],
+input[type="number"],
+select,
+textarea {
+    background: #fff;
+    border: 1px solid #ccc;    
+    border-radius: 3px;
+    line-height: 22px;
+    transition: background 150ms ease-out 0s;
+	width:100%;
+    margin:0;
+}
+
+input,
+textarea { padding: 6px 12px; }
+
+::-webkit-input-placeholder { color: #999; }                /* WebKit, Blink, Edge */
+:-moz-placeholder           { color: #999; opacity: 1; }    /* Mozilla Firefox 4 to 18 */
+::-moz-placeholder          { color: #999; opacity: 1; }    /* Mozilla Firefox 19+ */
+:-ms-input-placeholder      { color: #999; }                /* Internet Explorer 10-11 */
+::-ms-input-placeholder     { color: #999; }                /* Microsoft Edge */
+::placeholder               { color: #999; }                /* Most modern browsers support this now. */
+
+    
+
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+    border: 1px solid $ci-color;
+    color: $color_f_02;
+}
+
+.input_adress_error {
+    clear: both;
+    top: -10px;
+    margin-bottom: 10px;
+}
+
+.input_zip_error {
+    margin-bottom: 0 !important;
+    position: relative !important;
+    top: -10px;
+}
+
+.input_adress_error .field-validation-error {
+    margin-bottom: 0;
+}
+
+.input_ort,
+.input_plz{
+    margin-bottom: 10px;
+}
+
+.input_ort {
+    float: left;
+    position: relative;
+    width: 75%;
+    width: calc(100% - 6em);
+}
+
+.input_plz {
+    float: left;
+    padding-right: 15px;
+    position: relative;
+    width: 25%;
+    width: calc(6em);
+}
+
+.input_hausnr {
+    float: left;
+    position: relative;
+    width: 25%;
+}
+
+.input_strasse {
+    width: 75%;
+    padding-right: 15px;
+    position: relative;
+    float: left;
+}
+
+textarea:focus { outline:none; }
+
+select {
+    background: transparent;
+    -webkit-appearance: none; /* Nötig um die Systemstandard-Styles zu entfernen und eigene Styles zu verwenden */
+       -moz-appearance: none;
+}
+
+select::-ms-expand {  /* Nötig um die Systemstandard-Styles zu entfernen und eigene Styles zu verwenden */
+    display: none;
+}
+
+.horizontal_radio label,
+.horizontal_check label {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.fw_s { width: 90px; }  /* Die notwendigen Breitenangaben für Formulare 2.0 */
+.fw_m { width: 140px !important; }
+.fw_m.date { width: 145px !important; } /* native Datepicker benötigt auf chrome mehr Platz */
+.fw_l { width: 260px; }
+
+select.picker {
+    padding: 6px 29px 6px 8px;
+    height: 36px;
+    position: relative;
+    z-index: 1;
+}
+
+.picker_wrapper::after,
+.picker::after {
+    content: '\e80a';
+    color: #999;
+    float: right;
+    font-family: "fontello";
+    font-size: 19px;
+    height: 6px;
+    line-height: 22px;
+    width: 11px;
+    pointer-events: none;
+}
+
+.picker:after { margin: -2px -18px 0; }
+
+.picker:focus {
+    outline: none;
+    border: 1px solid $ci-color;
+}
+
+.picker_wrapper {
+    background: #fff;
+    border-radius: 3px;
+    margin-bottom: 5px;
+}
+
+.picker_wrapper:after { 
+    margin-bottom: -6px;
+    position: relative;
+    right: 15px;
+    top: -29px;
+    z-index: 1;
+}
+
+.picker_wrapper input[type="text"] {
+    padding-right: 30px;
+}
+
+/*Ort bei Adresse des Objekts*/
+
+.input_ort.picker_wrapper input {
+    background-color: #fff !important;
+    color: $color_f_02;
+}
+
+.input_ort input {
+    background-color: #efefef;
+    color: #999;
+}
+
+
+/* ERROR & VALIDATION */
+
+.field-validation-error {
+    font-weight: normal;
+    position: static;
+    color: #f33;
+    margin-bottom: 10px;
+    display: block;
+    white-space: normal;
+    word-wrap: break-word;
+    min-width: 170px;
+    margin-top: 0;
+}
+
+/* ERROR & VALIDATION */
+
+
+.autocomplete_content {
+    border: 1px solid #aaa;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+    max-height: 200px;
+    position: absolute;
+    top: -8px;
+    z-index: 9;
+}
+
+.autocomplete_content ul li {
+    background: #fff;
+    border-bottom: 1px solid #eee !important;
+    line-height: 18px;
+    padding: 5px 9px;
+}
+
+.autocomplete_content ul li:hover *,
+.autocomplete_content ul li:hover,
+.autocomplete_content ul li.selected {
+    background: #dadada;
+    cursor: pointer;
+}
+
+.highlight {
+    font-weight: bold;
+}
+
+textarea.input-validation-error,
+input.input-validation-error,
+input.input-validation-error + span.input_currency { /* Einheit für Input */
+    background-color: #efb2b2;
+}
+
+
+/*----------------------------------------------------------------------------*\
+    - ANIMATION
+\*----------------------------------------------------------------------------*/
+
+
+@keyframes color {
+    from {
+        color: #666;
+    }
+
+    to {
+        color: #fff;
+    }
+}
+
+@-moz-keyframes color {
+    from { color: #666; }
+    to   { color: #fff; }
+}
+
+@-webkit-keyframes color {
+    from { color: #666; }
+    to   { color: #fff; }
+}
+
+@keyframes bgcolor {
+    from { background-color: #666; }
+    to { background-color: #fff; }
+}
+
+
+@-moz-keyframes bgcolor {
+    from { background-color: #666; }
+    to   { background-color: #fff; }
+}
+
+@-webkit-keyframes bgcolor {
+    from { background-color: #666; }
+    to   { background-color: #fff; }
+}
+
+.flexbox_container {
+    display: inline; /* wenn flexbox nicht unterstützt*/
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+
+
+    /*----------------------------------------------------------------------------*\
+    - MEDIA-QUERY
+\*----------------------------------------------------------------------------*/
+    /*  -- MEDIA-QUERY < 640 -----------------------------------------------------*/
+    @media screen and (max-width: 640px) {
+
+         .btn_100p { /* buttonclass 01 to 100% width */
+            width: 100% !important;
+        }
+
+        .btn_01,
+        .btn_02 {
+            width: 100%;
+        }
+
+        .autocomplete_content {         
+            top: 60px;
+        }
+
+        .input_ort {
+            margin-top: 0px;
+        }
+
+    }

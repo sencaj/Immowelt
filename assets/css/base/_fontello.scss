@@ -1,0 +1,98 @@
+/*----------------------------  immowelt.de v5.0  ----------------------------*\
+
+    CONTENT:
+    - GENERIC | NICH ÄNDERN
+    - ICONLIST
+    - ANIMATION.CSS
+
+\*----------------------------------------------------------------------------*/
+
+
+
+
+/*----------------------------------------------------------------------------*\
+    - GENERIC
+\*----------------------------------------------------------------------------*/
+
+@font-face {
+  font-family: 'fontello';
+  src: url('~/objektstatistik-reloaded/dist/fonts/fontello/fontello.eot?86551570');
+  src: url('~/objektstatistik-reloaded/dist/fonts/fontello/fontello.eot?86551570#iefix') format('embedded-opentype'),
+       url('~/objektstatistik-reloaded/dist/fonts/fontello/fontello.woff2?24690484') format('woff2'),
+       url('~/objektstatistik-reloaded/dist/fonts/fontello/fontello.woff?86551570') format('woff'),
+       url('~/objektstatistik-reloaded/dist/fonts/fontello/fontello.ttf?86551570') format('truetype'),
+       url('~/objektstatistik-reloaded/dist/fonts/fontello/fontello.svg?86551570#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('fontello.svg?52409570#fontello') format('svg');
+  }
+}
+*/
+ 
+ [class^="icon-"]:before,
+ [class*=" icon-"]:before,
+ [class^="icon-"]:after,
+ [class*=" icon-"]:after {
+    font-family: "fontello";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+ 
+    display: inline-block;
+    text-decoration: inherit;
+    text-align: center;
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+
+
+
+/*----------------------------------------------------------------------------*\
+    - ICONLIST
+\*----------------------------------------------------------------------------*/
+
+ /* Do NOT write any applied classes in here and keep the sorting by content# */
+
+.icon-close:before              { content: '\e803'; } /* '' */     /* Off-Canvas */
+.icon-file-pdf:before           { content: '\e81b'; } /* '' */     /* List-Icon, AGB */
+.icon-pen:before                { content: '\f040'; } /* '' */     /* neue Polygonsuche auf Karte (Zeichnen) */
+.icon-pen:before                { content: '\f040'; } /* '' */     /* neue Polygonsuche auf Karte (Zeichnen) */
+.icon-heart:before              { content: '\e857'; } /* '' */     /* Merken-Herz für Animation in Liste */
+.icon-plus:before               { content: '\e85a'; } /* '' */     /* neue Erfassung (Preise und Beschreibung)*/
+
+
+/* ICONS DER NEUES ERFASSUNG  */
+.icon-gewerblicher-anbieter:before  { content: '\e84a';} /* '' */   /* Stepper - neue Erfassung */
+.icon-privater-anbieter:before      { content: '\e84d';} /* '' */   /* Stepper - neue Erfassung */
+.icon-finden:before                 { content: '\e849';} /* '' */   /* Stepper - neue Erfassung */
+.icon-haus:before                   { content: '\e84b';} /* '' */   /* Stepper - neue Erfassung */
+.icon-hochladen:before              { content: '\e84c';} /* '' */   /* Medienupload - neue Erfassung */
+.icon-sonstiges:before              { content: '\e84e';} /* '' */   /* Stepper - neue Erfassung */
+.icon-teilen:before                 { content: '\e84f';} /* '' */   /* Stepper - neue Erfassung */
+.icon-verkaufen:before              { content: '\e850';} /* '' */   /* Stepper - neue Erfassung */
+.icon-vermieten:before              { content: '\e851';} /* '' */   /* Stepper - neue Erfassung */
+.icon-wohnung:before                { content: '\e852';} /* '' */   /* Stepper - neue Erfassung */
+.icon-ausland:before                { content: '\e853';} /* '' */   /* Stepper - neue Erfassung */
+.icon-deutschland:before            { content: '\e855';} /* '' */   /* Stepper - neue Erfassung */
+.icon-energieausweis:before         { content: '\e856';} /* '' */   /* Medienupload - neue Erfassung */
+.icon-bild:before                   { content: '\e854';} /* '' */   /* Medienupload - neue Erfassung */
+.icon-wohnen-auf-zeit:before        { content: '\e859';} /* '' */   /* Stepper - neue Erfassung*/
+.icon-info-circled:before           { content: '\e822';} /* '' */   /* Stepper - neue Erfassung*/
+.icon-chart-pie-1:before            { content: '\e85d';} /* '' */   /* Stepper - neue Erfassung*/
+.icon-chart-line:before             { content: '\e831';} /* '' */   /* Stepper - neue Erfassung*/
+.icon-file-excel:before             { content: '\e831';} /* '' */   /* Stepper - neue Erfassung*/
+.icon-pdf:before                    { content: '\e81b';} /* '' */   /* Stepper - neue Erfassung*/
+ 
